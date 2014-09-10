@@ -31,12 +31,15 @@ set encoding=utf-8
 colorscheme inkpot
 
 "omnicppcomplete
-let OmniCpp_SelectFirstItem=2
-let OmniCpp_MayCompleteScpe=1
-let OmniCpp_NamespaceSearch=1
-let OmniCpp_DefaultNamespaces = ["std"]
+"let OmniCpp_SelectFirstItem=2
+"let OmniCpp_MayCompleteScpe=1
+"let OmniCpp_NamespaceSearch=1
+"let OmniCpp_DefaultNamespaces = ["std"]
+"set completeopt=menu
+"set tags+=~/.vim/stdcpp.tags
+
+"clang_complete
 set completeopt=menu
-set tags+=~/.vim/stdcpp.tags
 
 "Tlist
 let Tlist_Use_Right_Window = 0
