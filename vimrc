@@ -13,6 +13,7 @@ Plugin 'vim-scripts/autocomplpop'
 Plugin 'https://github.com/Rip-Rip/clang_complete.git'
 Plugin 'tagbar'
 Plugin 'https://github.com/Lokaltog/vim-powerline.git'
+Plugin 'supertab'
 call vundle#end()
 
 set nu
@@ -28,6 +29,7 @@ set hlsearch
 set cursorline
 set cursorcolumn
 set encoding=utf-8
+filetype plugin on
 colorscheme inkpot
 
 "omnicppcomplete
@@ -40,6 +42,7 @@ colorscheme inkpot
 
 "clang_complete
 set completeopt=menu
+let g:clang_use_library=1
 
 "Tlist
 let Tlist_Use_Right_Window = 0
