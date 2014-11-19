@@ -73,3 +73,4 @@ nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F8> <C-W>w
 "nnoremap <silent> <F12> :Tlist <CR>
 nnoremap <silent> <F12> :TagbarToggle<CR>
+"map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
