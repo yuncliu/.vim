@@ -9,14 +9,14 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/minibufexpl.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/autocomplpop'
-"Plugin 'omnicppcomplete'
-Plugin 'https://github.com/Rip-Rip/clang_complete.git'
-Plugin 'tagbar'
+Plugin 'omnicppcomplete'
+"Plugin 'https://github.com/Rip-Rip/clang_complete.git'
 Plugin 'https://github.com/Lokaltog/vim-powerline.git'
 Plugin 'supertab'
 call vundle#end()
 
 set nu
+set mouse=a
 set nocp 
 set cindent 
 set autoindent 
@@ -33,19 +33,19 @@ filetype plugin on
 colorscheme inkpot
 
 "omnicppcomplete
-"let OmniCpp_SelectFirstItem=2
-"let OmniCpp_MayCompleteScpe=1
-"let OmniCpp_NamespaceSearch=1
-"let OmniCpp_DefaultNamespaces = ["std"]
-"set completeopt=menu
+let OmniCpp_SelectFirstItem=2
+let OmniCpp_MayCompleteScpe=1
+let OmniCpp_NamespaceSearch=1
+let OmniCpp_DefaultNamespaces = ["std"]
+set completeopt=menu
 "set tags+=~/.vim/stdcpp.tags
 
 "clang_complete
-set completeopt=menu
-let g:clang_use_library=1
+"set completeopt=menu
+"let g:clang_use_library=1
 
 "Tlist
-let Tlist_Use_Right_Window = 0
+let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
@@ -64,13 +64,9 @@ set t_Co=256
 let g:Powerline_symbols='compatible'
 let g:Powerline_stl_path_style = 'relative'
 
-"tagbar
-let g:tagbar_width = 30
-
 nnoremap <silent> <F1> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F8> <C-W>w
-"nnoremap <silent> <F12> :Tlist <CR>
-nnoremap <silent> <F12> :TagbarToggle<CR>
+nnoremap <silent> <F12> :Tlist <CR>
 "map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
