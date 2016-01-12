@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-scripts/autocomplpop'
 Plugin 'https://github.com/Shougo/neocomplete.vim.git'
 Plugin 'https://github.com/Shougo/neosnippet.vim.git'
 Plugin 'https://github.com/Shougo/neosnippet-snippets.git'
@@ -16,13 +15,14 @@ call vundle#end()
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
+Bundle 'davidhalter/jedi-vim'
 
 set nu
 set mouse=a
-set nocp 
-set cindent 
-set autoindent 
-set tabstop=4 
+set nocp
+set cindent
+set autoindent
+set tabstop=4
 set expandtab
 set shiftwidth=4
 set ic
@@ -31,6 +31,8 @@ set hlsearch
 set cursorline
 set cursorcolumn
 set encoding=utf-8
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 filetype plugin on
 colorscheme inkpot
 
@@ -41,7 +43,7 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 
 let g:tagbar_width = 30
 
-"powerline
+"airline
 set laststatus=2
 set t_Co=256
 let g:airline_powerline_fonts = 1
@@ -57,8 +59,6 @@ nnoremap <silent> <F12> :TagbarToggle <CR>
 "map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
