@@ -1,5 +1,3 @@
-cp ~/.vim/clang_complete ~/.clang_complete
-
 if [ -d ~/.vim/bundle/Vundle.vim ]; then
     echo "vundle is already installed"
 else

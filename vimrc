@@ -6,19 +6,20 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-scripts/minibufexpl.vim'
-Plugin 'vim-scripts/taglist.vim'
+"Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'https://github.com/Shougo/neocomplete.vim.git'
 Plugin 'https://github.com/Shougo/neosnippet.vim.git'
 Plugin 'https://github.com/Shougo/neosnippet-snippets.git'
-Plugin 'https://github.com/Rip-Rip/clang_complete.git'
-Plugin 'https://github.com/Lokaltog/vim-powerline.git'
-Plugin 'supertab'
 call vundle#end()
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/omnicppcomplete'
+Bundle 'bling/vim-airline'
+Bundle 'majutsushi/tagbar'
+
 
 set nu
-set mouse=a
+"set mouse=a
 set nocp 
 set cindent 
 set autoindent 
@@ -33,45 +34,26 @@ set cursorcolumn
 set encoding=utf-8
 filetype plugin on
 colorscheme inkpot
-
-"omnicppcomplete
-"let OmniCpp_SelectFirstItem=2
-"let OmniCpp_MayCompleteScpe=1
-"let OmniCpp_NamespaceSearch=1
-"let OmniCpp_DefaultNamespaces = ["std"]
-"set completeopt=menu
-"set tags+=~/.vim/stdcpp.tags
-
-"clang_complete
 set completeopt=menu
-let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-"let g:clang_use_library=1
+set tags+=~/.vim/stl_tags
 
-"Tlist
-let Tlist_Use_Right_Window = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
 
-"Minibufexpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1   
-let g:miniBufExplMapCTabSwitchBufs = 1   
-let g:miniBufExplModSelTarget = 1 
+"Tagbar
+let g:tagbar_width = 30
+nnoremap <silent> <F12> :TagbarToggle<CR>
 
-"powerline
+"air-line
 set laststatus=2
 set t_Co=256
-"let g:Powerline_symbols='unicode'
-"let g:Powerline_symbols='fancy'
-let g:Powerline_symbols='compatible'
-let g:Powerline_stl_path_style = 'relative'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 nnoremap <silent> <F1> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F8> <C-W>w
-nnoremap <silent> <F12> :Tlist <CR>
 "map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
