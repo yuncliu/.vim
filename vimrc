@@ -32,6 +32,8 @@ set hlsearch
 set cursorline
 set cursorcolumn
 set encoding=utf-8
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 filetype plugin on
 colorscheme inkpot
 set completeopt=menu
