@@ -3,27 +3,25 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/autocomplpop'
-Plugin 'https://github.com/Shougo/neocomplete.vim.git'
-Plugin 'https://github.com/Shougo/neosnippet.vim.git'
-Plugin 'https://github.com/Shougo/neosnippet-snippets.git'
-call vundle#end()
+Bundle 'gmarik/Vundle.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'vim-scripts/autocomplpop'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/omnicppcomplete'
 Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
+Bundle 'Yggdroot/indentLine'
+Bundle 'mbbill/undotree'
+call vundle#end()
 
 
 set nu
-"set mouse=a
-set nocp 
-set cindent 
-set autoindent 
-set tabstop=4 
+set nocp
+set tabstop=4
 set expandtab
 set shiftwidth=4
 set ic
@@ -35,13 +33,15 @@ set encoding=utf-8
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 filetype plugin on
-colorscheme inkpot
+filetype indent on
 set completeopt=menu
 set tags+=~/.vim/stl_tags
 
+colorscheme inkpot
+
 
 "Tagbar
-let g:tagbar_width = 30
+let g:tagbar_width = 25
 nnoremap <silent> <F12> :TagbarToggle<CR>
 
 "air-line
@@ -55,8 +55,9 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 nnoremap <silent> <F1> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
+nnoremap <C-u> :UndotreeToggle<CR>
 nnoremap <silent> <F8> <C-W>w
-"map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q `pwd`<CR>
 "
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
