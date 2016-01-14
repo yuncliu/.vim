@@ -1,5 +1,5 @@
 if [ ! -d ~/.vim ]; then
-    mkdir ~/.vim
+    git clone https://github.com/yuncliu/.vim.git ~/.vim
     cd ~/.vim
 fi
 
