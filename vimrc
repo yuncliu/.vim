@@ -3,19 +3,20 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'https://github.com/Shougo/neocomplete.vim.git'
-Plugin 'https://github.com/Shougo/neosnippet.vim.git'
-Plugin 'https://github.com/Shougo/neosnippet-snippets.git'
-Plugin 'https://github.com/Rip-Rip/clang_complete.git'
-Plugin 'supertab'
-call vundle#end()
+Bundle 'gmarik/Vundle.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/neosnippet-snippets'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'crusoexia/vim-monokai'
+call vundle#end()
 
 set nu
 set mouse=a
@@ -34,7 +35,8 @@ set encoding=utf-8
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 filetype plugin on
-colorscheme inkpot
+"colorscheme inkpot
+colorscheme monokai
 
 "clang_complete
 set completeopt=menu
