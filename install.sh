@@ -1,3 +1,8 @@
+if [ ! -d ~/.vim ]; then
+    mkdir ~/.vim
+    cd ~/.vim
+fi
+
 echo "Hellow"
 if [ -d ~/.vim/bundle/Vundle.vim ]; then
     echo "vundle is already installed"
