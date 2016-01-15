@@ -17,3 +17,10 @@ else
     echo 'creating stl tags'
     bash stl.sh
 fi
+
+if [ -f ~/.vim/usr_include_tags ]; then
+    echo 'tags for /usr/include existed'
+else
+    echo 'creating tags for /usr/include'
+    ctags -f usr_include_tags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include
+fi

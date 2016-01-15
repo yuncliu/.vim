@@ -38,6 +38,7 @@ filetype plugin on
 filetype indent on
 set completeopt=menu
 set tags+=~/.vim/stl_tags
+set tags+=~/.vim/usr_include_tags
 
 colorscheme inkpot
 
@@ -57,8 +58,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 nnoremap <silent> <F1> :bp <CR>
+nnoremap <silent> <C-h> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
+nnoremap <silent> <C-l> :bn <CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
+nnoremap <silent> <C-e> :NERDTreeTabsToggle<CR>
 nnoremap <C-u> :UndotreeToggle<CR>
 nnoremap <silent> <F8> <C-W>w
 map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q `pwd`<CR>
