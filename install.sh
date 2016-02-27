@@ -3,6 +3,8 @@ if [ ! -d ~/.vim ]; then
     cd ~/.vim
 fi
 
+sudo apt-get install exuberant-ctags
+
 echo "Hellow"
 if [ -d ~/.vim/bundle/Vundle.vim ]; then
     echo "vundle is already installed"
