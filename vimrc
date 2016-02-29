@@ -52,7 +52,7 @@ nnoremap <silent> <F12> :TagbarToggle<CR>
 "air-line
 set laststatus=2
 set t_Co=256
-let g:airline_theme='lucius'
+let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
