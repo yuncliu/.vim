@@ -38,8 +38,10 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 filetype plugin on
 filetype indent on
 set completeopt=menu
-set tags+=~/.vim/stl_tags
-set tags+=~/.vim/usr_include_tags
+
+for i in split(globpath('~/.vim', '*.tags'), '\n')
+    exe "set tags+=".i
+endfor
 
 colorscheme inkpot
 
