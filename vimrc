@@ -9,8 +9,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'vim-scripts/autocomplpop'
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet.vim'
-Bundle 'Shougo/neosnippet-snippets'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/omnicppcomplete'
 Bundle 'vim-airline/vim-airline'
@@ -19,6 +17,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mbbill/undotree'
 Bundle 'easymotion/vim-easymotion'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 call vundle#end()
 
 
@@ -42,8 +42,9 @@ set completeopt=menu
 for i in split(globpath('~/.vim', '*.tags'), '\n')
     exe "set tags+=".i
 endfor
+set tags+=./tags;$HOME "search tags until HOME
 
-colorscheme inkpot
+colorscheme molokai
 
 let g:indentLine_char = '┊'
 
@@ -142,20 +143,6 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
