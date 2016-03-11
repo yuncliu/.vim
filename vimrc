@@ -2,23 +2,23 @@ set nocompatible
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-Bundle 'gmarik/Vundle.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'vim-scripts/autocomplpop'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/omnicppcomplete'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'majutsushi/tagbar'
-Bundle 'Yggdroot/indentLine'
-Bundle 'mbbill/undotree'
-Bundle 'easymotion/vim-easymotion'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'vim-scripts/autocomplpop'
+Plugin 'vim-scripts/tabbar'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/omnicppcomplete'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
+Plugin 'mbbill/undotree'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
 
 
@@ -55,18 +55,32 @@ nnoremap <silent> <F12> :TagbarToggle<CR>
 "air-line
 set laststatus=2
 set t_Co=256
-let g:airline_theme='luna'
+let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 nnoremap <silent> <F1> :bp <CR>
-nnoremap <silent> <C-h> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
+nnoremap <silent> <C-h> :bp <CR>
 nnoremap <silent> <C-l> :bn <CR>
-nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
+nnoremap <silent> <C-w> :bd<CR>
+
 nnoremap <silent> <C-e> :NERDTreeTabsToggle<CR>
+nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
 nnoremap <C-u> :UndotreeToggle<CR>
 nnoremap <silent> <F8> <C-W>w
 map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q `pwd`<CR>
@@ -84,10 +98,10 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -103,9 +117,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -133,7 +147,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'

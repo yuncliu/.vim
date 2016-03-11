@@ -7,8 +7,10 @@ function install_color()
         mkdir -p ~/.vim/colors
     fi
     cd ~/.vim/colors
-    echo "Downloading molokai.vim"
-    curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim > molokai.vim
+    if [ ! -f ~/.vim/colors/molokai.vim ]; then
+        echo "Downloading molokai.vim.vim.vim"
+        curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim > molokai.vim
+    fi
     cd $current
 }
 
