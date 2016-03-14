@@ -7,7 +7,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/autocomplpop'
-Plugin 'vim-scripts/tabbar'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/omnicppcomplete'
@@ -19,6 +18,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'luochen1990/rainbow'
 call vundle#end()
 
 
@@ -51,6 +51,8 @@ let g:indentLine_char = '┊'
 "Tagbar
 let g:tagbar_width = 25
 nnoremap <silent> <F12> :TagbarToggle<CR>
+
+let g:rainbow_active=1
 
 "air-line
 set laststatus=2
