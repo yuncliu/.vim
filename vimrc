@@ -19,6 +19,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'luochen1990/rainbow'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 
 
@@ -43,6 +44,7 @@ for i in split(globpath('~/.vim', '*.tags'), '\n')
     exe "set tags+=".i
 endfor
 set tags+=./tags;$HOME "search tags until HOME
+let OmniCpp_ShowPrototypeInAbbr = 1
 
 colorscheme molokai
 
@@ -144,7 +146,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
