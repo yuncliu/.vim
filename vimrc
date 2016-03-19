@@ -81,7 +81,7 @@ nnoremap <silent> <F1> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
 nnoremap <silent> <C-h> :bp <CR>
 nnoremap <silent> <C-l> :bn <CR>
-nnoremap <silent> <C-w> :bd<CR>
+nnoremap <silent> <C-k> :bd<CR>
 nnoremap <silent> <C-i> :noh<CR>
 nnoremap <silent> <C-e> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
