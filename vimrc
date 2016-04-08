@@ -20,6 +20,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'luochen1990/rainbow'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'chrisgillis/vim-bootstrap3-snippets'
 call vundle#end()
 
 
@@ -79,14 +81,13 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 
 nnoremap <silent> <F1> :bp <CR>
 nnoremap <silent> <F2> :bn <CR>
-nnoremap <silent> <C-h> :bp <CR>
-nnoremap <silent> <C-l> :bn <CR>
-nnoremap <silent> <C-w> :bd<CR>
+nnoremap <silent> <C-x> :bd <CR>
 nnoremap <silent> <C-i> :noh<CR>
 nnoremap <silent> <C-e> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F3> :NERDTreeTabsToggle<CR>
 nnoremap <C-u> :UndotreeToggle<CR>
 nnoremap <silent> <F8> <C-W>w
+
 map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q `pwd`<CR>
 "
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
