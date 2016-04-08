@@ -31,6 +31,13 @@ function generate_stl_tag()
     rm -rf cpp_src
 }
 
+function generate_stl_tag_for_osx()
+{
+    p='/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/c++/4.2.1'
+
+    ctags -f stl.tags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ $p
+}
+
 if [ ! -d ~/.vim ]; then
     git clone https://github.com/yuncliu/.vim.git ~/.vim
     cd ~/.vim
@@ -61,13 +68,23 @@ else
         echo 'stl tags exist'
     else
         echo 'creating stl tags'
-        generate_stl_tag
+        if [ `uname` == 'Darwin' ]; then
+            echo "this is Darwin"
+            generate_stl_tag_for_osx
+        else
+            generate_stl_tag
+        fi
     fi
 
     if [ -f ~/.vim/usr_include.tags ]; then
         echo 'tags for /usr/include existed'
     else
-        echo 'creating tags for /usr/include'
-        ctags -f usr_include.tags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include
+        if [ `uname` == 'Darwin' ]; then
+            echo 'creating tags for /usr/include for OSX'
+            ctags -f usr_include.tags -R --c++-kinds=+p --fields=+iaS --extra=+q /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
+        else
+            echo 'creating tags for /usr/include'
+            ctags -f usr_include.tags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include
+        fi
     fi
 fi
