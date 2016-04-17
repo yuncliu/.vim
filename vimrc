@@ -23,6 +23,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 call vundle#end()
 
 set nu
