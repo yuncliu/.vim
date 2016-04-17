@@ -22,8 +22,8 @@ Plugin 'luochen1990/rainbow'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
-
 
 set nu
 set nocp
@@ -41,6 +41,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 filetype plugin on
 filetype indent on
 set completeopt=menu
+set hidden "switch tabs without save
 
 for i in split(globpath('~/.vim', '*.tags'), '\n')
     exe "set tags+=".i
@@ -67,6 +68,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tagbar#enabled=1
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
