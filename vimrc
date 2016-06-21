@@ -24,6 +24,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'chrisgillis/vim-bootstrap3-snippets'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 set nu
