@@ -30,7 +30,7 @@ if [ ! -d "$pycnf" ]; then
 fi
 
 cd vim
-./configure --prefix=$HOME/.usr --enable-luainterp --with-lua-prefix=/usr --enable-python3interp=yes --with-python3-config-dir=$pycnf
+./configure --prefix=$HOME/.local --enable-luainterp --with-lua-prefix=/usr --enable-python3interp=yes --with-python3-config-dir=$pycnf
 
 if [ -f Makefile ]; then
     make
