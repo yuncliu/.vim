@@ -45,6 +45,7 @@ filetype plugin on
 filetype indent on
 set completeopt=menu
 set hidden "switch tabs without save
+set clipboard=exclude:.*
 
 for i in split(globpath('~/.vim', '*.tags'), '\n')
     exe "set tags+=".i
